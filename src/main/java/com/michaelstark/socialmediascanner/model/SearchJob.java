@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.michaelstark.socialmediascanner.entity;
+package com.michaelstark.socialmediascanner.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -42,6 +42,8 @@ public class SearchJob implements Serializable {
     private List<String> searchQueries;
     
     private List<SearchResultEntry> resultEntries;
+    
+    private boolean running;
 
     /**
      * @return the searchJobId
@@ -155,5 +157,22 @@ public class SearchJob implements Serializable {
      */
     public void setResultEntries(List<SearchResultEntry> resultEntries) {
         this.resultEntries = resultEntries;
+    }
+
+    /**
+     * Returns true if the job is currently running, false if otherwise.
+     * @return True if the job is currently running, false if otherwise.
+     */
+    @Column(name = "running")
+    public boolean isRunning() {
+        return running;
+    }
+
+    /**
+     * Sets a value to check to see if the job is running.
+     * @param running True if the job is running, false if otherwise.
+     */
+    public void setRunning(boolean running) {
+        this.running = running;
     }
 }

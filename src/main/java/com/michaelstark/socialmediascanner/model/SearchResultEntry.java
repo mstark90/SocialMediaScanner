@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.michaelstark.socialmediascanner.entity;
+package com.michaelstark.socialmediascanner.model;
 
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -48,7 +49,7 @@ public class SearchResultEntry implements Serializable {
      * @return the entrySource
      */
     @Column(name = "entrySource")
-    @Enumerated
+    @Enumerated(EnumType.ORDINAL)
     public EntrySource getEntrySource() {
         return entrySource;
     }

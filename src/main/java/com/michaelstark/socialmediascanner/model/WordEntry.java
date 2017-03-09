@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.michaelstark.socialmediascanner.analytics.entity;
+package com.michaelstark.socialmediascanner.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,14 +16,15 @@ import org.hibernate.annotations.GenericGenerator;
  * @author mstark
  */
 @Entity
-public class PostEntry implements Serializable {
+public class WordEntry implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     
-    private String text;
-    private String poster;
+    private String jobAnalysisId;
+    
+    private String word;
 
     /**
      * @return the id
@@ -40,30 +41,30 @@ public class PostEntry implements Serializable {
     }
 
     /**
-     * @return the text
+     * @return the word
      */
-    public String getText() {
-        return text;
+    public String getWord() {
+        return word;
     }
 
     /**
-     * @param text the text to set
+     * @param word the word to set
      */
-    public void setText(String text) {
-        this.text = text;
+    public void setWord(String word) {
+        this.word = word;
     }
 
     /**
-     * @return the poster
+     * @return the jobAnalysisId
      */
-    public String getPoster() {
-        return poster;
+    public String getJobAnalysisId() {
+        return jobAnalysisId;
     }
 
     /**
-     * @param poster the poster to set
+     * @param jobAnalysisId the jobAnalysisId to set
      */
-    public void setPoster(String poster) {
-        this.poster = poster;
+    public void setJobAnalysisId(String jobAnalysisId) {
+        this.jobAnalysisId = jobAnalysisId;
     }
 }
